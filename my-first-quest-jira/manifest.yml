@@ -1,0 +1,23 @@
+modules:
+  jira:projectPage:
+    - key: my-first-quest-jira-hello-world-project-page
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: Ashwin's first quest
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+app:
+  runtime:
+    name: nodejs22.x
+    memoryMB: 256
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/b4821629-d05b-406f-8334-db70e90508f4
+permissions:
+  scopes:
+    - read:jira-user
